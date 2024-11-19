@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar citas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
+    alt="logo derecha" class="logoDer">
+
+    <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+    alt="logo izquierda" class="logoIzq">
+
+
+<div id="app" class="login-container">
+    <h2>Iniciar sesion</h2>
+    <div class="input-group">
+        <label for="usuario">usuario</label>
+        <input type="text" id="usuario" v-model="usuario">
+    </div>
+    <div class="input-group">
+        <label for="password">contraseña</label>
+        <input type="password" id="password" v-model="password">
+    </div>
+
+    
+    <button class="btn" @click="login">iniciar sesion</button>
+    <p v-if="error" class="error">{{ error }}</p>
+    
+    <button class="btn" @click="login">Alumno</button>
+    <p v-if="error" class="error">{{ error }}</p>
+
+    <button class="abajoIzq" @click="login">Olvidaste contraseña</button>
+    <button class="abajoDer" @click="login">Registrarse</button>
+
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            usuario: '',
+            password: '',
+            error: ''
+        },
+        methods: {
+            login() {
+                if (this.usuario === '' || this.password === '') {
+                    this.error = 'Usuario o contraseña no son correctos.';
+                } else if (this.usuario === 'user' && this.password === 'password') {
+                    this.error = '';
+                    alert('Usuario o contraseña no son correctos');
+                } else {
+                    this.error = 'Incorrect usuario or password.';
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+
+<footer>
+
+</footer>
+</html>

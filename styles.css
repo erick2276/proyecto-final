@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    position: relative;
+}
+h2{
+    color: navy;
+}
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+.login-container h2 {
+    text-align: center;
+}
+.input-group {
+    margin-bottom: 15px;
+    color: navy;
+}
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: navy;
+    margin-top: 5px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover {
+    background-color: navy;
+}
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.Calendario {
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.diaSemana, .dia {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+}
+.diaSemana div {
+    font-weight: bold;
+    color: navy;
+}
+.dia div {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dia div:hover {
+    background: rgb(81, 177, 255);
+}
+.hoy {
+    background: navy;
+    color: white;
+}
+
+.logoDer{
+    top: 10px;
+    right: 10px;
+}
+.logoIzq{
+    top: 10px;
+    left: 10px;
+}
+img{
+    border-radius: 10px;
+}
+img.logoDer,img.logoIzq{
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    z-index: 10;    
+}
+
+.abajoDer{
+    margin-top: 10px;
+margin-left: 70px;
+color: navy;
+    
+}
+.abajoIzq{
+
+    margin-right: 10px;
+    margin-top: 10px;
+    color: navy;
+}
+.input{
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: navy;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.canvas{
+    margin-top: 20px;
+}
+.Registro{
+    text-align: left;
+    margin-bottom: 15px;
+    color: navy;
+}
+
+.Registro label {
+    text-align: left;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.Registro input {
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

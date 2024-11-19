@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
+    alt="logo derecha" class="logoDer">
+
+    <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+    alt="logo izquierda" class="logoIzq">
+
+<div id="app" class="Calendario">
+    <div class="header">
+        <button @click="prevMonth">&lt;</button>
+        <h2>{{ monthNames[currentMonth] }} {{ currentYear }}</h2>
+        <button @click="nextMonth">&gt;</button>
+    </div>
+    <div class="diaSemana">
+        <div v-for="diaNombre in diaSemana" :key="diaNombre">{{ diaNombre }}</div>
+    </div>
+    <div class="dia">
+        <div v-for="dia in blankDays" :key="'blank-' + dia"></div>
+        <div v-for="dia in diaMes" :key="dia" 
+             :class="{ hoy: isToday(dia) }">
+            {{ dia }}
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            currentYear: new Date().getFullYear(),
+            currentMonth: new Date().getMonth(),
+            diaSemana: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            monthNames: [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ]
+        },
+        computed: {
+            diaMes() {
+                const days = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
+                return Array.from({ length: days }, (_, i) => i + 1);
+            },
+            blankDays() {
+                const firstDayOfMonth = new Date(this.currentYear, this.currentMonth, 1).getDay();
+                return Array.from({ length: firstDayOfMonth }, (_, i) => i);
+            }
+        },
+        methods: {
+            prevMonth() {
+                if (this.currentMonth === 0) {
+                    this.currentMonth = 11;
+                    this.currentYear--;
+                } else {
+                    this.currentMonth--;
+                }
+            },
+            nextMonth() {
+                if (this.currentMonth === 11) {
+                    this.currentMonth = 0;
+                    this.currentYear++;
+                } else {
+                    this.currentMonth++;
+                }
+            },
+            isToday(day) {
+                const hoy = new Date();
+                return (
+                    day === hoy.getDate() &&
+                    this.currentMonth === hoy.getMonth() &&
+                    this.currentYear === hoy.getFullYear()
+                );
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
