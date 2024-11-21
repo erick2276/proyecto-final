@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear lista</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
+    alt="logo derecha" class="logoDer">
+
+<img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+    alt="logo izquierda" class="logoIzq">
+    <div id="app">
+
+        <div class="input-group">
+            <select id="Carrera" v-model="carreraSeleccionada">
+                <option value="" disabled selected>Seleccione una carrera</option>
+                <option v-for="opcion in carrera" :key="opcion" :value="opcion">
+                    {{ opcion }}
+                </option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <select id="Semestre" v-model="semestreSeleccionado">
+                <option value="" disabled selected>Seleccione un semestre</option>
+                <option v-for="opcion in semestre" :key="opcion" :value="opcion">
+                    {{ opcion }}
+                </option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <select id="Grupo" v-model="grupoSeleccionado">
+                <option value="" disabled selected>Seleccione un grupo</option>
+                <option v-for="opcion in grupo" :key="opcion" :value="opcion">
+                    {{ opcion }}
+                </option>
+            </select>
+        </div>
+
+        <div class="Registro">
+            <input type="text" id="Apellidos" v-model="apellidos" placeholder="Escribe tus apellidos">
+        </div>
+        <div class="Registro">
+            <input type="text" id="nomProfesor" v-model="nomProfesor" placeholder="Escribe el nombre del profesor">
+        </div>
+        <div class="Registro">
+            <input type="email" id="Correo" v-model="correo" placeholder="Escribe tu correo electrónico">
+        </div>
+
+        <button @click="register">Cancelar</button>
+        <button @click="register">Cargar lista</button>
+        <button @click="register">Siguiente</button>
+
+
+        <h3>Selección actual:</h3>
+        <p>Carrera: <strong>{{ carreraSeleccionada }}</strong></p>
+        <p>Semestre: <strong>{{ semestreSeleccionado }}</strong></p>
+        <p>Grupo: <strong>{{ grupoSeleccionado }}</strong></p>
+        <p>Apellidos: <strong>{{ apellidos }}</strong></p>
+        <p>Nombre del profesor: <strong>{{ nomProfesor }}</strong></p>
+        <p>Correo: <strong>{{ correo }}</strong></p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                carrera: [
+                    'Ingeniería en Innovación Agrícola Sustentable',
+                    'Ingeniería Electromecánica',
+                    'Ingeniería Electrónica',
+                    'Ingeniería en Gestión Empresarial',
+                    'Ingeniería Industrial',
+                    'Ingeniería Mecatrónica',
+                    'Ingeniería en Sistemas Computacionales',
+                    'Licenciatura en Administración'
+                ],
+                semestre: [
+                    '1er',
+                    '2do',
+                    '3er',
+                    '4to',
+                    '5to',
+                    '6to',
+                    '7mo',
+                    '8vo',
+                    '9no'
+                ],
+                grupo: [
+                    '1SA',
+                    '1SB',
+                    '2SA',
+                    '2SB'
+                ],
+                carreraSeleccionada: '',
+                semestreSeleccionado: '',
+                grupoSeleccionado: '',
+                apellidos: '',
+                nomProfesor: '',
+                correo: ''
+            },
+            methods: {
+                register() {
+                    alert(`Datos registrados:
+Carrera: ${this.carreraSeleccionada}
+Semestre: ${this.semestreSeleccionado}
+Grupo: ${this.grupoSeleccionado}
+Apellidos: ${this.apellidos}
+Nombre del profesor: ${this.nomProfesor}
+Correo: ${this.correo}`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -34,7 +34,7 @@ h2{
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid white;
     border-radius: 4px;
 }
 .btn {
@@ -48,9 +48,16 @@ h2{
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+
 }
 .btn:hover {
     background-color: navy;
+    transform: scale(1.05);
+}
+.btn:active{
+    background-color: navy;
+    transform: scale(0.95);
 }
 .error {
     color: red;
@@ -130,12 +137,13 @@ color: navy;
     width: 300px;
     font-size: 16px;
     margin-bottom: 20px;
+    color: navy;
 }
 .button{
     padding: 10px 20px;
     font-size: 16px;
     background-color: navy;
-    color: white;
+    color: navy;
     border: none;
     cursor: pointer;
 }
@@ -153,12 +161,13 @@ color: navy;
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: navy;
 }
 .Registro input {
     text-align: left;
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid navy;
     border-radius: 4px;
 }
