@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="app">
+        <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
+        alt="logo derecha" class="logoDer">
+
+        <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+        alt="logo izquierda" class="logoIzq">
+
+        <button :disabled="!isEnabled" @click="handleClick('Evento')">{{ btnEvento }}</button>
+        <button :disabled="!isEnabled" @click="handleClick('Insertar')">{{ btnInsertar }}</button>
+        <button :disabled="!isEnabled" @click="handleClick('Escanear')">{{ btnEscaner }}</button>
+        <button :disabled="!isEnabled" @click="handleClick('Salir')">{{ btnSalir }}</button>
+        <button :disabled="!isEnabled" @click="handleClick('Crear')">{{ btnCrear }}</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app', 
+        data: {
+          isEnabled: true,
+          btnEvento: 'Evento',
+          btnInsertar: 'Insertar',
+          btnEscaner: 'Escanear',
+          btnSalir: 'Salir',
+          btnCrear: 'Crear' 
+        },
+        methods: {
+          handleClick(action) {
+            console.log(`Botón ${action} clicado!`);
+          }
+        }
+      });
+    </script>
+</body>
+
+<footer>
+</footer>
+</html>
