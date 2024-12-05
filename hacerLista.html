@@ -11,10 +11,10 @@
     <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
     alt="logo derecha" class="logoDer">
 
-<img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+    <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
     alt="logo izquierda" class="logoIzq">
+    
     <div id="app">
-
         <div class="input-group">
             <select id="Carrera" v-model="carreraSeleccionada">
                 <option value="" disabled selected>Seleccione una carrera</option>
@@ -52,12 +52,9 @@
             <input type="email" id="Correo" v-model="correo" placeholder="Escribe tu correo electrónico">
         </div>
 
-        <button @click="register">Cancelar</button>
-        <button @click="register">Cargar lista</button>
-        <button @click="register">Siguiente</button>
-
-
-
+        <button @click="cancelar">Cancelar</button>
+        <button @click="cargarLista">Cargar lista</button>
+        <button @click="siguiente">Siguiente</button>
     </div>
 
     <script>
@@ -99,14 +96,14 @@
                 correo: ''
             },
             methods: {
-                register() {
-                    alert(`Datos registrados:
-Carrera: ${this.carreraSeleccionada}
-Semestre: ${this.semestreSeleccionado}
-Grupo: ${this.grupoSeleccionado}
-Apellidos: ${this.apellidos}
-Nombre del profesor: ${this.nomProfesor}
-Correo: ${this.correo}`);
+                cancelar() {
+                    alert('cancelado.');
+                },
+                cargarLista() {
+                    alert('cargado.');
+                },
+                siguiente() {
+                    alert('siguiente.');
                 }
             }
         });

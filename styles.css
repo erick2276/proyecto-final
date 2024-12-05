@@ -8,6 +8,17 @@ body {
     background-color: #f0f2f5;
     position: relative;
 }
+header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#eventoID{
+    text-align: center;
+    margin-bottom: 20px;
+}
+h1{
+    color: navy;
+}
 h2{
     color: navy;
 }
@@ -37,6 +48,28 @@ h2{
     border: 1px solid white;
     border-radius: 4px;
 }
+.input-parrafoDER {
+    margin-bottom: 15px;
+    color: navy;
+}
+.nput-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.nput-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+.parIZQ{
+    float: left;
+}
+.parDER{
+    float: left;
+}
+
 .btn {
     display: inline-block;
     width: 100%;
@@ -178,32 +211,60 @@ color: navy;
 }
 
 button {
-    background-color: #007BFF; /* Azul brillante */
-    color: white;             /* Texto blanco */
-    border: 2px solid #0056b3; /* Borde azul oscuro */
-    border-radius: 8px;        /* Bordes redondeados */
-    padding: 10px 20px;        /* Espaciado interno */
-    font-size: 16px;           /* Tamaño de fuente */
-    cursor: pointer;           /* Cambia el cursor a mano al pasar */
-    transition: background-color 0.3s ease; /* Animación al interactuar */
+    background-color: #007BFF;
+    color: white;            
+    border: 2px solid #0056b3; 
+    border-radius: 8px;        
+    padding: 10px 20px;       
+    font-size: 16px;          
+    cursor: pointer;          
+    transition: background-color 0.3s ease; 
 }
 
-/* Efecto hover para más azul al pasar el ratón */
 button:hover {
-    background-color: #0056b3; /* Azul más oscuro */
+    background-color: #0056b3; 
 }
 
-/* Estado deshabilitado */
 button:disabled {
-    background-color: #d6d6d6; /* Gris claro */
-    color: #a1a1a1;           /* Texto gris */
-    border: 2px solid #c0c0c0; /* Borde gris */
-    cursor: not-allowed;      /* Icono de prohibido */
+    background-color: #d6d6d6; 
+    color: #a1a1a1;          
+    border: 2px solid #c0c0c0; 
+    cursor: not-allowed;      
 }
 #app{
     display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center;    /* Centra los botones horizontalmente */
-    gap: 10px;              /* Espaciado entre botones */
+    flex-direction: column; 
+    align-items: center;  
+    gap: 10px;             
     margin-top: 20px; 
+}
+
+.parIZQ,.parDER{
+    width: 40%;    
+}
+.parcen{
+    float:left;
+}
+
+div{
+    padding: 1%;
+}
+#izq{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+#btnEvento{
+    margin-top: auto; 
+    float: right;
+
+    
+}
+button{
+    margin: auto;
+    
 }
