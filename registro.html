@@ -1,73 +1,79 @@
-<template>
-    <div id="app" class="Registro">
-      <img
-        src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
-        alt="logo derecha"
-        class="logoDer"
-      />
-      <img
-        src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
-        alt="logo izquierda"
-        class="logoIzq"
-      />
-     <link rel="stylesheet" href="styles.css">
-
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar sesión</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      <div id="app" class="Registro">
+        <img
+          src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
+          alt="logo derecha"
+          class="logoDer"
+        />
+        <img
+          src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
+          alt="logo izquierda"
+          class="logoIzq"
+        />
+       <link rel="stylesheet" href="styles.css">
   
-      <h2>Registro</h2>
-      <div class="Registro">
-        <label for="Nombre">Nombre</label>
-        <input type="text" id="Nombre" v-model="Nombre" />
+    
+        <h2>Registro</h2>
+        <div class="Registro">
+          <label for="Nombre">Nombre</label>
+          <input type="text" id="Nombre" v-model="Nombre" />
+        </div>
+        <div class="Registro">
+          <label for="Apellido">Apellido</label>
+          <input type="text" id="Apellido" v-model="Apellido" />
+        </div>
+        <div class="Registro">
+          <label for="Correo">Correo</label>
+          <input type="email" id="Correo" v-model="Correo" />
+        </div>
+        <div class="Registro">
+          <label for="Telefono">Teléfono</label>
+          <input type="number" id="Telefono" v-model="Telefono" />
+        </div>
+        <div class="Registro">
+          <label for="Oficina">Oficina</label>
+          <input type="text" id="Oficina" v-model="Oficina" />
+        </div>
+        <div class="Registro">
+          <label for="NumeroEmpleado">Número de empleado</label>
+          <input type="number" id="NumeroEmpleado" v-model="NumeroEmpleado" />
+        </div>
+        <button @click="register">Registrar</button>
       </div>
-      <div class="Registro">
-        <label for="Apellido">Apellido</label>
-        <input type="text" id="Apellido" v-model="Apellido" />
-      </div>
-      <div class="Registro">
-        <label for="Correo">Correo</label>
-        <input type="email" id="Correo" v-model="Correo" />
-      </div>
-      <div class="Registro">
-        <label for="Telefono">Teléfono</label>
-        <input type="number" id="Telefono" v-model="Telefono" />
-      </div>
-      <div class="Registro">
-        <label for="Oficina">Oficina</label>
-        <input type="text" id="Oficina" v-model="Oficina" />
-      </div>
-      <div class="Registro">
-        <label for="NumeroEmpleado">Número de empleado</label>
-        <input type="number" id="NumeroEmpleado" v-model="NumeroEmpleado" />
-      </div>
-      <button @click="register">Registrar</button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "Registro",
-    data() {
-      return {
-        Nombre: "",
-        Apellido: "",
-        Correo: "",
-        Telefono: "",
-        Oficina: "",
-        NumeroEmpleado: "",
-      };
-    },
-    methods: {
-      register() {
-        alert(`Datos registrados:
-        Nombre: ${this.Nombre}
-        Apellido: ${this.Apellido}
-        Correo: ${this.Correo}
-        Teléfono: ${this.Telefono}
-        Oficina: ${this.Oficina}
-        Número de empleado: ${this.NumeroEmpleado}`);
+    
+    <script>
+    export default {
+      name: "Registro",
+      data() {
+        return {
+          Nombre: "",
+          Apellido: "",
+          Correo: "",
+          Telefono: "",
+          Oficina: "",
+          NumeroEmpleado: "",
+        };
       },
-    },
-  };
-  </script>
-  
-
-  
+      methods: {
+        register() {
+          alert(`Datos registrados:
+          Nombre: ${this.Nombre}
+          Apellido: ${this.Apellido}
+          Correo: ${this.Correo}
+          Teléfono: ${this.Telefono}
+          Oficina: ${this.Oficina}
+          Número de empleado: ${this.NumeroEmpleado}`);
+        },
+      },
+    };
+    </script>
+    </html>
+    

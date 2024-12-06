@@ -251,11 +251,10 @@ div{
 }
 #izq{
     display: flex;
-    flex-direction: column;
-    float: left;
-    margin: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    flex-direction: column; 
+    align-items: center;  
+    gap: 10px;             
+    margin-top: 20px; 
     
 }
 #btnEvento{
@@ -267,4 +266,18 @@ div{
 button{
     margin: auto;
     
+}
+#cabezaDescripcion{
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.parDescripcion{
+    margin-top: 15px;
+    text-align: center;
+}
+textarea{
+    width: 90%;
+    max-width: 600px;
+    margin-top: 10px;
 }

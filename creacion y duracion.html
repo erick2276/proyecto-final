@@ -8,30 +8,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png"
-             alt="logo derecha" class="logoDer">
-        <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png"
-             alt="logo izquierda" class="logoIzq">
-        <h1 id="eventoID">Creación y Duración del Evento</h1>
-    </header>
-
-    <div class="izq">
-        <div class="parIZQ">
-            <label for="descripcion">Descripción del evento:</label>
-            <textarea 
-                id="descripcion" 
-                v-model="form.descripcion" 
-                rows="5" 
-                cols="30">
-            </textarea>
-            <p v-if="form.descripcion">Descripción ingresada: {{ form.descripcion }}</p>
-        </div>
+    <div id="app">
+        <header>
+            <img src="https://itcampeche.edu.mx/wp-content/uploads/2020/01/logo_TecNM_.png" alt="logo derecha" class="logoDer">
+            <img src="https://www.ensenada.tecnm.mx/wp-content/themes/tecnm/images/logo-ensenada.png" alt="logo izquierda" class="logoIzq">
+            <h1 id="eventoID">Creación y Duración del Evento</h1>
+            <div class="parDescripcion">
+                <label for="descripcion">Descripción del evento:</label>
+                <textarea id="descripcion" v-model="form.descripcion"></textarea>
+                <p v-if="form.descripcion">Descripción ingresada: {{ form.descripcion }}</p>
+            </div>    
+        </header>
 
         <div class="parDER">
             <label for="aulas">Lugar del evento:</label>
             <select id="aulas" v-model="aulaSeleccionada">
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="" disabled>Seleccione una opción</option>
                 <option v-for="aula in aulas" :key="aula" :value="aula">
                     {{ aula }}
                 </option>
@@ -42,18 +34,20 @@
         <div class="parDER" v-for="(input, index) in inputs" :key="index">
             <div class="input-parrafoDER">
                 <label :for="input.id">{{ input.label }}</label>
-                <input 
-                    :type="input.type" 
-                    :id="input.id" 
-                    v-model="form[input.model]" 
-                />
+                <input :type="input.type" :id="input.id" v-model="form[input.model]" />
             </div>
+        </div>
+
+        <div id="btnEvento">
+            <button @click="regresar">Regresar</button>
+            <button @click="limpiar">Limpiar</button>
+            <button @click="cargar">Cargar evento</button>        
         </div>
     </div>
 
     <script>
         new Vue({
-            el: "#izq",
+            el: "#app",
             data: {
                 aulaSeleccionada: "",
                 aulas: ["biblioteca", "salon", "otro"],
@@ -76,20 +70,31 @@
                     { id: "correo", label: "Correo", type: "email", model: "correo" },
                     { id: "telefono", label: "Teléfono", type: "number", model: "telefono" }
                 ]
+            },
+            methods: {
+                regresar() {
+                    alert("Función 'Regresar' no implementada.");
+                },
+                limpiar() {
+                    this.form = {
+                        descripcion: "",
+                        nomInvitado: "",
+                        apellidos: "",
+                        empresa: "",
+                        nombreEvento: "",
+                        tema: "",
+                        correo: "",
+                        telefono: ""
+                    };
+                    this.aulaSeleccionada = "";
+                },
+                cargar() {
+                    alert("Función 'Cargar' no implementada.");
+                }
             }
         });
     </script>
-
-
-    <div id="btnEvento">
-    <button @click="regresar">regresar</button>
-    <button @click="limpiar">limpiar</button>
-    <button @click="cargar">Cargar evento</button>        
-    </div>  
 </body>
-    <footer>
-      
-    </footer>
-
-
+<footer>
+</footer>
 </html>
